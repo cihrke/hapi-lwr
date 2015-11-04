@@ -57,6 +57,9 @@ namespace HAPI {
     /// Lock for exchanging data with the communication thread.
     H3DUtil::MutexLock com_lock;
 
+    /// The device index to use for this device.
+    int device_id;
+
     /// The current device values updated in the communicataion thread.
     /// Access to this structure must be contained within locking with
     /// com_lock.

@@ -2,12 +2,11 @@
 #include <H3DUtil/DynamicLibrary.h>
 
 #include <sstream>
-#include <dhdc.h>
 
 using namespace HAPI;
 
 HAPIHapticsDevice::HapticsDeviceRegistration
-LwrHapticsDevice::device_registration("Lwr", &(newInstance< LwrHapticsDevice >), );
+LwrHapticsDevice::device_registration("Lwr", &(newInstance< LwrHapticsDevice >));
 
 bool LwrHapticsDevice::initHapticsDevice( int _thread_frequency ) {
   device_id = 1; //hack
