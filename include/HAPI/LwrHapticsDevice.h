@@ -3,8 +3,6 @@
 
 #include <HAPI/HAPIHapticsDevice.h>
 
-#ifdef HAVE_DHDAPI
-
 namespace HAPI {
 
   /// \ingroup HapticsDevices
@@ -65,7 +63,5 @@ namespace HAPI {
     DeviceValues current_values;
   };
 }
-
-#endif
 
 #endif

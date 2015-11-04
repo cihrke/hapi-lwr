@@ -1,7 +1,6 @@
 #include <HAPI/LwrHapticsDevice.h>
 #include <H3DUtil/DynamicLibrary.h>
 
-#ifdef HAVE_DHDAPI
 #include <sstream>
 #include <dhdc.h>
 
@@ -64,7 +63,7 @@ LwrHapticsDevice::com_func( void *data ) {
   LwrHapticsDevice *hd = static_cast< LwrHapticsDevice * >( data );
 
   if( hd->device_id != -1 ) {
-    //do update stuff here
+    //do update stuff here?
     /*double x, y, z, rx, ry, rz, vx, vy, vz;
     dhdGetPosition( &z, &x, &y, hd->device_id );
     dhdGetOrientationRad( &rz, &rx, &ry, hd->device_id );
@@ -101,6 +100,3 @@ LwrHapticsDevice::com_func( void *data ) {
 
   return H3DUtil::PeriodicThread::CALLBACK_CONTINUE;
 }
-
-
-#endif
