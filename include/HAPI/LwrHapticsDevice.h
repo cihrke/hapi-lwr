@@ -5,13 +5,6 @@
 
 namespace HAPI {
 
-  /// \ingroup HapticsDevices
-  /// \class ForceDimensionHapticsDevice
-  /// \brief Interface to all haptics devices from ForceDimension, including
-  /// the Delta and Omega devices.
-  ///
-  /// Uses the DHD API to interface to the haptics devices, so every
-  /// device supported by DHD API is supported by this class.
   class HAPI_API LwrHapticsDevice: public HAPIHapticsDevice {
   public:
     /// Constructor.
@@ -24,6 +17,8 @@ namespace HAPI {
 
     /// Destructor.
     virtual ~LwrHapticsDevice() {}
+
+    void updateValues(Vec3 pos, Vec3 vel, Rotation rot);
 
     /// Register this renderer to the haptics renderer database.
     static HapticsDeviceRegistration device_registration;

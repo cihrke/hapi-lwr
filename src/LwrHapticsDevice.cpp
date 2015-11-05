@@ -57,6 +57,16 @@ void LwrHapticsDevice::sendOutput( DeviceOutput &dv, HAPITime dt ) {
   }
 }
 
+void LwrHapticsDevice::updateValues(Vec3 pos, Vec3 vel, Rotation rot) {
+  if( device_id != -1 ) {
+    com_lock.lock();
+    current_values.position = pos;
+    current_values.velocity = vel;
+    current_values.orientation = rot;
+    com_lock.unlock();
+  }
+}
+
 H3DUtil::PeriodicThread::CallbackCode
 LwrHapticsDevice::com_func( void *data ) {
   LwrHapticsDevice *hd = static_cast< LwrHapticsDevice * >( data );
